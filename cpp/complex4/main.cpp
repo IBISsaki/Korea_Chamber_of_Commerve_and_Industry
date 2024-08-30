@@ -34,5 +34,12 @@ int main()
     std::cout << "c4 : " << c4 << std::endl;
     std::cout << "c5 : (" << c5.real() << ", " << c5.imag() << "i)" << std::endl;
     
+    Complex c6;
+
+    std::cout <<"input c6 : ";
+    std::cin >> c6;
+    
+    std::cout << "c6 : " << c6 << std::endl;
+    
     return 0;
 }

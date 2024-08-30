@@ -3,7 +3,6 @@
 #include <iostream>
 
 class Complex {
-friend std::istream& operator >> (std::istream& in, Complex& rhs);  
 friend std::ostream& operator << (std::ostream& out, const Complex& rhs);        // 전역함수 (firend함수로 만들기 위해 class 안에 넣어줌)
 
 private:

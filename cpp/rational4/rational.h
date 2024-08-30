@@ -4,6 +4,7 @@
 #include "gcd.h"
 
 class Rational{
+friend std::istream& operator >> (std::istream& in, Rational& rhs);
 friend std::ostream& operator << (std::ostream& out, const Rational& rhs);
 
 private:

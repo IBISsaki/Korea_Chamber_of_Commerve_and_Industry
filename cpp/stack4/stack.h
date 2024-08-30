@@ -16,8 +16,8 @@ private:
 public:
     explicit Stack(int size = 100);
 
-	void push(int data);
-	int pop();
+	void push(const T& data);
+    const T pop();
 
     bool isFull() const;
     bool isEmpty() const;
@@ -36,7 +36,7 @@ Stack<T>::Stack(int size)
 }
 
 template <typename T>
-void Stack<T>::push(int data)
+void Stack<T>::push(const T& data)
 {
     assert(!isFull());
 	
@@ -45,7 +45,7 @@ void Stack<T>::push(int data)
 }
 
 template <typename T>
-int Stack<T>::pop()
+const T Stack<T>::pop()
 {
     assert(!isEmpty());
 
