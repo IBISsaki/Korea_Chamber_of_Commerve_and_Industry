@@ -1,0 +1,20 @@
+express mysql --ejs
+cd mysql
+ npm install
+ npm install mysql
+node app.js
+npm install 'serve-favicon
+npm install serve-favicon
+node app.js
+dir
+dir > dir.txt
+type dir.txt
+doskey / history
+doskey/history
+doskey/history > history.txt
+type history.txt
+doskey
+doskey /history
+doskey
+doskey /history
+doskey /history > test.txt

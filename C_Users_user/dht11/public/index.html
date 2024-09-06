@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang=ko>
+
+<head>
+    <style>
+		#canvas { border: 1px solid lightgrey; }
+        body { padding: 25px;  font: 12px "Lucida Grande", Helvetica, Arial, sans-serif; }
+        iframe { overflow: hidden; }
+        #title { font-weight: bold;  font-size: 12.5px; }
+        a { color: #00B7FF; }
+    </style>
+	<title>Communicate with Arduino</title>
+</head>
+
+<body>
+	<table border="1">
+        <tr align = "center" height = "30"><td width = "150">Temperature : </td><td id = "temp" width = "100" ></td></tr>
+        <tr align = "center" height = "30"><td>Humidity : </td><td id = "humi"></td></tr>
+	</table>
+    
+    <iframe src="about:blank" width="0" height="0" frameborder="0" border="0" marginwidth="0" marginheight="0" name="iframe"></iframe>
+    
+    <script src="http://code.jquery.com/jquery-1.8.3.js"></script>
+	<script src="/socket.io/socket.io.js"></script> <!-- 일종의 include -->
+	
+    <script>
+	
+	
+	$(document).ready(function() 
+	{
+		$(function()
+        {
+            var val    = 0;
+            var oldval = 0;
+            
+			var socket = io();
+				
+			socket.on('temp', function( temp ){
+				$('#temp').text(temp);
+			});
+			
+			socket.on('humi', function( humi ){
+				$('#humi').text(humi);
+			});
+        });
+	});
+	</script>
+
+</body>
+</html>

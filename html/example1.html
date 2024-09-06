@@ -1,0 +1,58 @@
+<html>
+  <head>
+    <title>practice javascripts 1</title>
+  </head>
+	
+  <body> 
+    <p> &nbsp; </p>
+
+    <table align="center" border="0" cellpadding="0" background="white">
+      
+      <tr align="center">
+        <td colspan="6" width="150"><h2> example1.html</h2></td>
+      </tr>
+      
+      <tr align="center">
+        <td colspan="2" width="150"><img src="./img/offRed.gif"  ></td>
+        <td colspan="2" width="150"><img src="./img/offGreen.gif"></td>
+        <td colspan="2" width="150"><img src="./img/offBlue.gif" ></td>
+      </tr>
+      
+      <tr align="center">
+        <td align="right"><input type="button" value="on"  onClick="on_red()"   ></td>
+        <td align="left" ><input type="button" value="off" onClick="off_red()"  ></td>
+        <td align="right"><input type="button" value="on"  onClick="on_green()" ></td>
+        <td align="left" ><input type="button" value="off" onClick="off_green()"></td>
+        <td align="right"><input type="button" value="on"  onClick="on_blue()"  ></td>
+        <td align="left" ><input type="button" value="off" onClick="off_blue()" ></td>
+      </tr>
+      
+    </table>
+
+    <script>
+      function on_red(){
+        document.images[0].src = "./img/onRed.gif";
+      }
+
+      function off_red(){
+        document.images[0].src = "./img/offRed.gif";
+      }
+			
+      function on_green(){
+        document.images[1].src = "./img/onGreen.gif";
+      }
+			
+      function off_green(){
+        document.images[1].src = "./img/offGreen.gif";
+      }
+			
+      function on_blue(){
+        document.images[2].src = "./img/onBlue.gif";
+      }
+			
+      function off_blue(){
+        document.images[2].src = "./img/offBlue.gif";
+      }
+    </script>
+  </body>
+<html>

@@ -1,0 +1,61 @@
+<html>
+  <head>
+    <title>Javascripts Example 3</title>
+  </head>
+	
+  <body>  
+    <p> &nbsp; </p>
+
+    <table align="center" border="0" cellpadding="0" background="white">
+      
+      <tr align="center">
+        <td colspan="6" width="150"><h2> example3.html</h2></td>
+      </tr>
+      
+      <tr align="center">
+        <td colspan="2" width="150"><img src="./img/offRed.gif"   id="rd" ></td>
+        <td colspan="2" width="150"><img src="./img/offGreen.gif" id="grn"></td>
+        <td colspan="2" width="150"><img src="./img/offBlue.gif"  id="blu"></td>
+      </tr>
+      
+      <tr align="center">
+        <td align="right"><input type="button" value="on"  onClick="on_red()"   ></td>
+        <td align="left" ><input type="button" value="off" onClick="off_red()"  ></td>
+        <td align="right"><input type="button" value="on"  onClick="on_green()" ></td>
+        <td align="left" ><input type="button" value="off" onClick="off_green()"></td>
+        <td align="right"><input type="button" value="on"  onClick="on_blue()"  ></td>
+        <td align="left" ><input type="button" value="off" onClick="off_blue()" ></td>
+      </tr>
+      
+    </table>
+    
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> 
+	
+    <!--<script src="./js/jquery.min.js">-->
+	<script>
+	function on_red(){
+        $("#rd").attr('src','./img/onRed.gif');
+      }
+      
+      function off_red(){
+        $("#rd").attr('src','./img/offRed.gif');
+      }
+      
+      function on_green(){
+        $("#grn").attr('src','./img/onGreen.gif');
+      }
+      
+      function off_green(){
+        $("#grn").attr('src','./img/offGreen.gif');
+      }
+	    
+      function on_blue(){
+        $("#blu").attr('src','./img/onBlue.gif');
+      }
+			
+      function off_blue(){
+        $("#blu").attr('src','./img/offBlue.gif');
+      }
+    </script>
+  </body>
+<html>
