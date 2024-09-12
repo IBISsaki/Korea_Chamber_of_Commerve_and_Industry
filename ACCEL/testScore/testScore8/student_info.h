@@ -9,8 +9,10 @@ struct Student_info {
     std::string name;
     double midterm;
     double finalterm;
-    double homework;
+    std::vector<double> homeworks;
 };
+
+static std::istream& read_hw(std::istream& in, std::vector<double>& homeworks);
 
 std::istream& read(std::istream& in, Student_info& s);
 

@@ -1,5 +1,3 @@
-#include <stdexcept>
-#include "median.h"
 #include "student_info.h"
 
 static std::istream& read_hw(std::istream& in, std::vector<double>& homeworks)
@@ -22,22 +20,8 @@ static std::istream& read_hw(std::istream& in, std::vector<double>& homeworks)
 
 std::istream& read(std::istream& in, Student_info& s)
 {
-    in >> s.name >> s.midterm >> s.finalterm;
-
-    if(in)
-    {
-        std::vector<double> homeworks;
-        
-        read_hw(in, homeworks);
-
-
-        if(homeworks.size() == 0)
-        {
-            throw std::domain_error("no homework");
-        }
-
-        s.homework = median(homeworks);
-    }
+    std::cin >> s.name >> s.midterm >> s.finalterm;
+    read_hw(in, s.homeworks);
 
     return in;
 }
