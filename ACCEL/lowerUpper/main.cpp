@@ -4,13 +4,16 @@
 #include <cctype>  // std::isspace(), std::isupper() 사용을 위해 필요
 
 // 대문자가 하나라도 포함되어 있는지 확인하는 함수
-bool isUpper(const std::string& s) {
-    for (char c : s) {
-        if (std::isupper(c)) {  // 문자가 대문자인지 확인
-            return true;
+bool isUpper(std::string s) {
+    bool result = false;
+    for (std::string::const_iterator it = s.cbegin(); it != s.cend(); ++it) {
+        // if (*it >= 'A' && *it <= 'Z') {  // 문자가 대문자인지 확인
+        if(isupper(*it)) {
+            result = true;
+            break;
         }
     }
-    return false;
+    return result;
 }
 
 int main() {
@@ -28,17 +31,16 @@ int main() {
 
     // 대문자가 없는 단어들 출력
     std::cout << "대문자 없음 :\n";
-    for (const auto& word : lower) {
-        std::cout << word << " ";
+    for (std::vector<std::string>::const_iterator it = lower.cbegin(); it != lower.cend(); ++it) {
+        std::cout << *it << std::endl;
     }
-    std::cout << std::endl;
 
     // 대문자가 하나 이상 포함된 단어들 출력
     std::cout << "대문자 있음 :\n";
-    for (const auto& word : upper) {
-        std::cout << word << " ";
+    for (auto it = upper.cbegin(); it != upper.cend(); ++it) {
+        std::cout << *it << std::endl;
     }
-    std::cout << std::endl;
+    
 
     return 0;
 }
