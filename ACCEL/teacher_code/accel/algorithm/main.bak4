@@ -1,0 +1,24 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+int main()
+{
+    int nums[] = {60, 10, 90, 100, 30, 70, 50, 20, 40, 80};
+    std::vector<int> v1(nums, nums + 10);
+
+    int nums2[] = {70, 50};
+    std::vector<int> v2(nums2, nums2 + 2);
+
+    auto it = v1.cbegin();
+    while (it != v1.cend()) {
+        it = std::search(it, v1.cend(), v2.cbegin(), v2.cend());
+        
+        if (it != v1.cend()) {
+            std::cout << "found " << *it << std::endl;
+            ++it;
+        }
+    }    
+ 
+    return 0;
+}

@@ -1,0 +1,18 @@
+#include <iostream>
+#include <vector>
+#include <numeric>
+
+int main()
+{
+    std::vector<double> vec = {1.1, 2.2, 3.3, 4.4, 5.5};
+
+    double sum;
+    // sum = 0.0;
+    // for (double d : vec) {
+    //     sum = sum + d;
+    // }
+    sum = std::accumulate(vec.cbegin(), vec.cend(), 0.0);
+
+    std::cout << "sum : " << sum << std::endl;
+    return 0;
+}

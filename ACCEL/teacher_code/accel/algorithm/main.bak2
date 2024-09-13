@@ -1,0 +1,39 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+bool greater50(int num) 
+{
+    return num > 50;
+}
+
+int main()
+{
+    int nums[] = {50, 30, 60, 70, 90, 10, 40, 20, 100, 80};
+    std::vector<int> vec(nums, nums + 10);
+
+    std::vector<int>::const_iterator it = std::find(vec.cbegin(), vec.cend(), 55);
+    if (it != vec.cend()) {
+        std::cout << "found " << *it << std::endl;
+    } else {
+        std::cout << "not found" << std::endl;
+    }
+
+    auto it2 = std::find_if(vec.cbegin(), vec.cend(), greater50);
+    if (it2 != vec.cend()) {
+        std::cout << "found " << *it2 << std::endl;
+    } else {
+        std::cout << "not found" << std::endl;
+    }
+
+    auto it3 = vec.cbegin();
+    while (it3 != vec.cend()) {
+        it3 = std::find_if(it3, vec.cend(), greater50);
+        if (it3 != vec.cend()) {
+            std::cout << *it3 << std::endl;
+            ++it3;
+        }
+    }    
+    
+    return 0;
+}

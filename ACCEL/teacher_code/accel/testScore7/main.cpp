@@ -29,22 +29,38 @@ bool fgrade(const Student_info& s)
     return grade(s) < 60;
 }
 
+// std::vector<Student_info> extract_fails(std::vector<Student_info>& passes)
+// {
+//     std::vector<Student_info> fails;
+    
+//     for (std::vector<Student_info>::size_type i = 0; i != passes.size(); ) {
+//         if (fgrade(passes[i])) {
+//             fails.push_back(passes[i]);
+//             passes.erase(passes.begin() + i);
+//         } else {
+//             ++i;
+//         }
+//     }
+
+//     return fails;
+// }
+
 std::vector<Student_info> extract_fails(std::vector<Student_info>& passes)
 {
     std::vector<Student_info> fails;
     
-    for (std::vector<Student_info>::size_type i = 0; i != passes.size(); ) {
-        if (fgrade(passes[i])) {
-            fails.push_back(passes[i]);
-            passes.erase(passes.begin() + i);
+    for (std::vector<Student_info>::iterator it = passes.begin(); it != passes.end(); ) {
+        if (fgrade(*it)) {
+            fails.push_back(*it);
+            passes.erase(it);
         } else {
-            ++i;
+            ++it;
         }
     }
 
+
     return fails;
 }
-
 
 bool compare(const Student_info& s1, const Student_info& s2)
 {
@@ -83,12 +99,12 @@ int main()
                 << std::setprecision(prec) << std::endl;
         }
         std::cout << "fail list : " << std::endl;
-        for (std::vector<Student_info>::size_type i = 0; i != fails.size(); ++i) { 
-            const double finalScore = grade(fails[i]);
+        for (std::vector<Student_info>::const_iterator it = fails.cbegin(); it != fails.cend(); ++it) { 
+            const double finalScore = grade(*it);
 
             std::streamsize prec = std::cout.precision();
-            std::cout << fails[i].name 
-                << std::string(maxLen - fails[i].name.size() + 1, ' ')            
+            std::cout << it->name 
+                << std::string(maxLen - it->name.size() + 1, ' ')            
                 << std::setprecision(3) << finalScore  
                 << std::setprecision(prec) << std::endl;
         }

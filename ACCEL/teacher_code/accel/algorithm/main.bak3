@@ -1,0 +1,21 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+int main()
+{
+    int nums[] = {1, 2, 3, 4, 5};
+    std::vector<int> vec(nums, nums + 5);
+
+    if (std::equal(nums, nums + 5, vec.cbegin())) {
+        std::cout << "nums1 and vec have same elements" << std::endl;
+    } else {
+        std::cout << "nums1 and vec don't have same elements" << std::endl;
+    }
+
+    for (std::vector<int>::const_reverse_iterator it = vec.crbegin(); it != vec.crend(); ++it) {
+        std::cout << *it << std::endl;
+    }    
+
+    return 0;
+}

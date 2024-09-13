@@ -1,0 +1,29 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <iterator>
+
+int square(int num)
+{
+    return num * num;
+}
+
+int main()
+{
+    std::vector<int> vec = {1, 2, 3, 4, 5};
+
+    std::vector<int> result;
+    // for (auto it = vec.cbegin(); it != vec.cend(); ++it) {
+    //     result.push_back(square(*it));
+    // }
+
+    std::transform(vec.cbegin(), vec.cend(), std::back_inserter(result), square);
+
+    // for (int n : result) {
+    //     std::cout << n << std::endl;
+    // }
+    copy(result.cbegin(), result.cend(), std::ostream_iterator<int>(std::cout, " "));
+    std::cout << std::endl;
+
+    return 0; 
+}
