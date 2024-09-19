@@ -21,6 +21,8 @@
     - 대문자 변경 upper 소문자 변경 lower
     - strip, lstrip, rstrip
     - is oo
-    - in 연산자
     - split, join
     - if 조건문
+- 6교시
+    - 날짜/시간 활용
+    - in 연산자
