@@ -16,7 +16,7 @@
     - 4교시
         - 복합 대입 연산자
         - input
-        - str format
+        - str format, f-string
     - 5교시
         - boolean
         - 대문자 변경 upper 소문자 변경 lower
@@ -25,7 +25,9 @@
         - split, join
         - if 조건문
     - 6교시
-        - 날짜/시간 활용
+        - datetime module 날짜/시간 활용
+        예시 -- 계절 구하기, 홀짝 구하기
+        - 
         - in 연산자
 
 ## 2024_9_20 a23~a34
@@ -44,14 +46,64 @@
     - 4교시
         - while 문
         - list method, dictionary method
-        - list comprehension
-
-    - 5교시
-        - 함수
-        - 키워드 매개변수
+        - list comprehension, enumerate, 삼항 연산자
 
     - 6교시
-        - 예외 객체
+        - 키워드 매개변수
+        - 함수의 반환값
+        - 함수의 인자 (postional-argument, default-argument, keyword-argument, variable-length-argument)
 
-## 2024_9_23 a35~a4
+    - 7교시
+        - 예외 처리 try, except, else, finally
+        - 사용자 정의 예외처리, raise
+
+## 2024_9_23 a35~a56
 - 3일차
+    - 1교시
+        - 클래스 개념
+    
+    - 2교시
+        - data 로 처리
+        - 간단한 클래스 만들기
+        - data class 데코레이터
+        
+    - 3교시
+        - method 추가
+        - special_method 추가 (비교연산자 및 str, expr)
+
+    - 4교시
+        - 클래스 변수 활용
+        - 클래스 메소드 class method 데코레이터
+        - 다중 상속 및 mro
+
+    - 5교시
+        - private 설정
+        - property 데코레이터 getter, setter
+        
+    - 6교시
+        - tuple exchange
+        - 재귀함수 만들기
+        - lru_cache 테코레이터
+
+    - 7교시
+        - 람다함수
+        - 파일 처리
+        - 제너레이터
+        - 랜덤 모듈
+
+
+## 2024_9_24 package_basic
+- 4일차
+    - 1교시
+        - 뵥습
+        - module 개념 실습
+
+    - 2교시
+        - package 개념 실습
+        - import 및 __init__,py 실습
+
+    - 3교시
+    - 4교시
+    - 5교시
+    - 6교시
+    - 7교시
