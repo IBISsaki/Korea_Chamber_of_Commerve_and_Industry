@@ -1,0 +1,10 @@
+/home/test/Desktop/AIOT_2024_ROBOT/OpenCV/cppTest/build/CMakeFiles/drawLine.dir
+/home/test/Desktop/AIOT_2024_ROBOT/OpenCV/cppTest/build/CMakeFiles/drawPoly.dir
+/home/test/Desktop/AIOT_2024_ROBOT/OpenCV/cppTest/build/CMakeFiles/helloOpenCV.dir
+/home/test/Desktop/AIOT_2024_ROBOT/OpenCV/cppTest/build/CMakeFiles/mainclass.dir
+/home/test/Desktop/AIOT_2024_ROBOT/OpenCV/cppTest/build/CMakeFiles/matOp.dir
+/home/test/Desktop/AIOT_2024_ROBOT/OpenCV/cppTest/build/CMakeFiles/matOp2.dir
+/home/test/Desktop/AIOT_2024_ROBOT/OpenCV/cppTest/build/CMakeFiles/vecOp.dir
+/home/test/Desktop/AIOT_2024_ROBOT/OpenCV/cppTest/build/CMakeFiles/videoCaption.dir
+/home/test/Desktop/AIOT_2024_ROBOT/OpenCV/cppTest/build/CMakeFiles/edit_cache.dir
+/home/test/Desktop/AIOT_2024_ROBOT/OpenCV/cppTest/build/CMakeFiles/rebuild_cache.dir
