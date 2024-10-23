@@ -10,7 +10,11 @@ find_package(ament_cmake REQUIRED)
 find_package(rosidl_default_generators REQUIRED)
 find_package(builtin_interfaces REQUIRED)
 
-rosidl_generate_interfaces(${PROJECT_NAME} "msg/UserInt.msg" "srv/AddAndOdd.srv" DEPENDENCIES builtin_interfaces)
+rosidl_generate_interfaces(${PROJECT_NAME} 
+"msg/UserInt.msg" 
+"srv/AddAndOdd.srv" 
+"action/Fibonacci.action"
+DEPENDENCIES builtin_interfaces)
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)

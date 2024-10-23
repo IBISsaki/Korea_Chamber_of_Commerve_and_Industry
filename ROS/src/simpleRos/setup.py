@@ -39,7 +39,8 @@ setup(
             "user_int_pub = simpleRos.user_int_pub:main",
             "service_server_int = simpleRos.service_server_int:main",
             "simple_parameter = simpleRos.simple_parameter:main",
-            "action_server = simpleRos.action_server:main"
+            "action_server = simpleRos.action_server:main",
+            "action_client = simpleRos.action_client:main",
         ],
     },
 )
