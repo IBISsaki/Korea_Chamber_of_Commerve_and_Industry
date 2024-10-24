@@ -4,7 +4,7 @@
 상공회의소 4번째 강사님 최수길  
 https://github.com/freshmea/aiot_2024_robot
 
-# AIOT_2024_robot
+# aiot_2024_robot
 
 aiot robot
 
@@ -177,7 +177,7 @@ aiot robot
 
 ---
 
-## 2024_10_15
+## 2024_10_16
 
 ---
 
@@ -198,5 +198,127 @@ aiot robot
   - QR code 실습 ( cpp, python) cpp 코드 오브젝트 링크 오류
   - AruCo 실습
 - 6교시
+  - OpenCV 머신러닝
 - 7교시
-- 
+  - 필기체 인식 0~9 knn
+
+---
+
+## 2024_10_17
+
+---
+
+- 1교시
+  - 필기체 인식 0~9 knn 2
+- 2교시
+  - OpenCV 딥러닝
+  - 필기체 인시 0~9 cnn
+  - 이미지 분류
+- 3교시
+  - ROS2 개념
+- 4교시
+  - ROS2 설치
+- 5교시
+  - ROS2 cli 실습
+    - ros2 run, ros2 launch, ros2 topic, ros2 node, ros2 param, ros2 service, ros2 action
+- 6교시
+  - ROS2 rqt 실습
+    - rqt_graph, rqt_plot, rqt_image_view, rqt_console, rqt_logger_level
+- 7교시
+  - pkg 만들기
+    - ro2 pkg create
+  - node 작성 python
+
+---
+
+## 2024_10_18
+
+---
+
+- 1교시
+  - node 작성 기본 코드
+  - rclpy.init, rclpy.spin
+  - Node 클래스
+- 2교시
+  - alias 설정
+  - easyinstall deprecated 에러
+    - pip3 install setuptools==58.2.0
+- 3교시
+  - publisher 만들기
+  - class 구조화 하기
+- 4교시
+  - subscription 코드 만들기
+- 5교시
+  - QoS 코드 설정
+  - 시간 인터페이스 Header 사용하기
+- 6교시
+  - [과제]homework 패키지 만들기
+
+---
+
+## 2024_10_21
+
+---
+
+- 1교시
+  - ros2 cpp 패키지 만들기 simple_ros_cpp
+- 2교시
+  - CMakeLists.txt 작성
+  - .vscode/c_cpp_properties.json 수정
+  - ros2 cpp publisher 만들기
+- 3교시
+  - cpp publisher 콜백함수를 lambda 함수로 만들기
+  - class 구조화 하기.
+- 4교시
+  - cpp 분할 컴파일 및 include 추가
+  - launch 파일 작성 및 적용(python cpp)
+  - cout 대신 RCLCPP_INFO 사용하기
+  - print 대신 self.get_logger().info 사용하기
+- 5교시
+  - ros2 cpp subscriber 만들기
+  - 외부 라이브러리를 ros2 에서 사용하기 (opencv 글자 표시)
+- 6교시
+  - moveTurtle.py 기본 코드 작성
+  - 사각형 그리기 코드
+- 7교시
+  - [과제]cpp 로 같은 코드 작성
+
+---
+
+## 2024_10_22
+
+---
+
+- 1교시
+  - cpp 로 moveTurtle.cpp 작성 (simple_ros_cpp)
+- 2교시
+  - interface 설명 (topic, service, action) 차이
+- 3교시
+  - python service server 작성, service client 작성
+  - 동기방식의 service 에서 비동기 방식으로 코드 작성하기 call_async
+- 4교시
+  - cpp service server 작성
+- 5교시
+  - cpp serivce client 작성
+- 6교시
+  - user interce 작성 topic UserInt class (user_interface 패키지)
+    - package.xml, CMakeLists.txt 수정
+  - user_int_pub 노드 작성 (simple_ros 패키지)
+- 7교시
+
+---
+
+## 2024_10_23
+
+---
+
+- 1교시
+  - abc
+- 2교시
+- 3교시
+- 4교시
+- 5교시
+- 6교시
+- 7교시
+
+- 서로 다른 노드에서 파라미터 변경하기.
