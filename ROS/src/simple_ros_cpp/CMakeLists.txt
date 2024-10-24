@@ -15,6 +15,7 @@ find_package(turtlesim REQUIRED)
 find_package(std_srvs REQUIRED)
 find_package(user_interface REQUIRED)
 find_package(rcl_interfaces REQUIRED)
+find_package(rclcpp_action REQUIRED)
 
 # include directorise
 include_directories(include)
@@ -51,6 +52,12 @@ ament_target_dependencies(service_client_int rclcpp user_interface)
 add_executable(simple_parameter src/simple_parameter.cpp)
 ament_target_dependencies(simple_parameter rclcpp rcl_interfaces)
 
+add_executable(action_server src/action_server.cpp)
+ament_target_dependencies(action_server rclcpp user_interface rclcpp_action)
+
+add_executable(action_client src/action_client.cpp)
+ament_target_dependencies(action_client rclcpp user_interface rclcpp_action)
+
 install(TARGETS 
   hello_pub 
   hello_pub_lambda 
@@ -62,6 +69,8 @@ install(TARGETS
   service_client
   service_client_int
   simple_parameter
+  action_server
+  action_client
   DESTINATION lib/${PROJECT_NAME})
 
 install(DIRECTORY launch DESTINATION share/${PROJECT_NAME})
