@@ -313,12 +313,125 @@ aiot robot
 ---
 
 - 1교시
-  - abc
-- 2교시
-- 3교시
+  - 파라미터 적용 노드 작성
+- 2교시:
+  - 런치 파일 작성
+  - 런치 파일에서 파라미터 사용
+  - cli 에서 파라미터 파일(yaml) 적용
+  - namespace 적용
 - 4교시
+  - 런치 파일로 터틀심노드 사용
 - 5교시
+  - action interface  추가( user_interface )
+  - action server 작성(Fibonacci 코드)
+- 6교시
+  - action client 작성(Fibonacci 코드)
+- 7교시
+  - action client 작성(python type hint 추가)
+
+---
+
+## 2024_10_24
+
+---
+
+- 1교시
+  - simple_parameter2 노드에서 simple_parameter 노드 의 파라미터 변경하기 (service 코드)
+- 2교시
+  - 파라미터 추가 설명 : 런치에서 여러노드의 파라미터 관리
+  - action_server python 작성 (fibonacci)
+- 3교시
+  - cpp 파라미터 노드 작성
+  - turtlesim 을 이용한 파라미터 노드 작성
+  - 런치에서 파라미터 파일 적용하기
+  - 코드, 런치, 실행문에서 파라미터 적용의 순서
+- 4교시
+  - namespace 설명
+  - namespace 를 적용해서 turtlesim 노드 제어(2개의 터틀 제어)
+  - 인터페이스 작성 fibonacci.action
+- 5교시
+  - 런치 파일 작성
+  - action_client python 작성
+- 6교시
+  - cpp 런치 파일 작성 (python action_server, cpp action_client)
+- 7교시
+  - action_client cpp 작성 (fibonacci)
+
+---
+
+## 2024_10_25
+
+---
+
+- arithmetic 패키지 작성
+- 1교시
+  - 패키지 생성 arith
+  - python 노드 작성 argument
+  - python 노드 작성 calculator
+- 2교시
+  - calculator 노드 에 서비스 서버 추가
+  - operator 노드 작성 ( 서비스 클라이언트)
+- 3교시
+  - calculator 노드 에 액션 서버 추가
+  - checker 노드 작성 ( 액션 클라이언트)
+- 4교시
+  - calculator 노드에 멀티쓰레드 설정 추가
+  - 런치 작성
+- 5교시
+  - cpp 패키지 생성 arith_cpp
+  - cpp 노드 작성 argument
+- 6교시
+  - cpp 노드 작성 calculator
+- 7교시
+  - 런치 파일 작성
+
+---
+
+## 2024_10_28
+
+---
+
+- 1교시
+  - 3부 심화 프로그래밍 로깅
+  - 로깅 환경 변수 설정
+  - 파이썬 로깅 노드 작성
+- 2교시
+  - CPP 로깅 노드 작성
+- 3교시
+  - 사용자 정의 cli 명령어 작성
+  - 패키지 생성 ros2env
+- 4교시
+  - 사용자 정의 cli 명령어 작성
+- 5교시
+  - 터틀봇3 설명
+    - 특징
+    - 데이터계통, 전력계통
+- 6교시
+  - 패키지 설치
+    - 가제보, 카토그래퍼, 네비게이션
+    - 터틀봇3 패키지 설치
+    - 터틀봇3 wifi 설정, ros2 domain 설정
+- 7교시
+  - 터틀봇3 제어 체크[실습]
+
+---
+
+## 2024_10_29
+
+---
+
+- 1교시
+  - IPC 설명
+- 6교시
+  - cpp 노드 작성 two node pipeline.cpp
+- 2교시
+  - cpp 노드 작성 cyclic pipeline.cpp
+- 3교시
+  - cpp 노드 작성 image pipeline.cpp - 동영상 파일로 작동할 수 있게 수정
+- 4교시
+  - QOS 설정 ( qos_profile, history, depth, reliability, durability) 복습
+  - deadline 예제 코드 deadline.py
+- 5교시
+  - deadline 예제 코드
 - 6교시
 - 7교시
-
-- 서로 다른 노드에서 파라미터 변경하기.
