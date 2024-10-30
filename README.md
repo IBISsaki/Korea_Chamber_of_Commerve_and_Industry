@@ -12,6 +12,13 @@ aiot robot
 
 [클릭](https://docs.google.com/presentation/d/1LHXvZnWKbSJLpbeop8mL-gTkLUKbxCPuk6moOfNLY-s/edit#slide=id.p)
 
+## gazebo 환경 변수
+
+```bash
+export SVGA_VGPU10=0
+```
+
+
 ---
 
 ## 2024_9_19
@@ -422,7 +429,6 @@ aiot robot
 
 - 1교시
   - IPC 설명
-- 6교시
   - cpp 노드 작성 two node pipeline.cpp
 - 2교시
   - cpp 노드 작성 cyclic pipeline.cpp
@@ -434,4 +440,38 @@ aiot robot
 - 5교시
   - deadline 예제 코드
 - 6교시
+  - 터틀봇 VsCode remote 연결
+  - move_turtle 패키지 생성(foxy python)
 - 7교시
+  - circle 노드 작성 ( 터틀봇 cmd_vel 제어)
+  - retancle 노드 작성 ( 터틀봇 cmd_vel 발행, odom 구독)
+
+---
+
+## 2024_10_30
+
+---
+
+- 1교시
+  - 복습
+  - lifespan QoS 설정 노드 작성
+- 2교시
+  - liveliness QoS 설정 노드 작성
+- 3교시
+  - component 원리, shared object 설명
+  - component talker 노드 작성
+- 4교시
+  - component manager 로 노드 로드 실습
+  - component listener 노드 작성
+- 5교시
+  - gazebo 설명
+  - gazebo use_sim_time 실습
+- 6교시
+  - gazebo 에 turtlebot3 모델 불러오기.
+  - 패키지 생성(move_turtle : humble)
+  - 원 그리기 노드 적용
+- 7교시
+  - 모델을 작동하는데 필요한 state_publisher, tf 설명.
+  - ros2 launch turtlebot3_gazebo empty_world.launch.py 로 실행.
+  - rviz2 실습
+  - 사각형 그리기 노드 디버깅( gazebo 시뮬레이션 이용)
