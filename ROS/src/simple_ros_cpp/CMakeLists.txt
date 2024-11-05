@@ -19,6 +19,10 @@ find_package(rclcpp_action REQUIRED)
 find_package(sensor_msgs REQUIRED)
 find_package(rclcpp_components REQUIRED)
 find_package(rcutils REQUIRED)
+find_package(rclcpp_lifecycle REQUIRED)
+find_package(lifecycle_msgs REQUIRED)
+find_package(tf2 REQUIRED)
+find_package(tf2_ros REQUIRED)
 
 # library
 add_library(talker_component SHARED src/talker_component.cpp)
@@ -98,6 +102,50 @@ target_link_libraries(image_pipeline_all_in_one
   opencv_core
   opencv_highgui)
 
+add_executable(manual_composition src/manual_composition.cpp)
+target_link_libraries(manual_composition
+  talker_component
+  listener_component)
+ament_target_dependencies(manual_composition rclcpp)
+
+add_executable(lifecycle_talker src/lifecycle_talker.cpp)
+ament_target_dependencies(lifecycle_talker rclcpp_lifecycle lifecycle_msgs std_msgs)
+
+add_executable(lifecycle_listener src/lifecycle_listener.cpp)
+ament_target_dependencies(lifecycle_listener rclcpp_lifecycle lifecycle_msgs std_msgs)
+
+add_executable(lifecycle_service_client src/lifecycle_service_client.cpp)
+ament_target_dependencies(lifecycle_service_client rclcpp_lifecycle lifecycle_msgs std_msgs)
+
+add_executable(lifecycle_service_client_thread src/lifecycle_service_client_thread.cpp)
+ament_target_dependencies(lifecycle_service_client_thread rclcpp_lifecycle lifecycle_msgs std_msgs)
+
+add_executable(static_tf src/static_tf.cpp)
+ament_target_dependencies(static_tf 
+  rclcpp
+  tf2_ros
+  tf2
+  geometry_msgs
+)
+
+add_executable(dynamic_tf src/dynamic_tf.cpp)
+ament_target_dependencies(dynamic_tf 
+  rclcpp
+  tf2_ros
+  tf2
+  geometry_msgs
+  turtlesim
+)
+
+add_executable(follow_turtle_tf src/follow_turtle_tf.cpp)
+ament_target_dependencies(follow_turtle_tf 
+  rclcpp
+  tf2_ros
+  tf2
+  geometry_msgs
+  turtlesim
+)
+
 install(TARGETS
   hello_pub
   hello_pub_lambda
@@ -115,6 +163,14 @@ install(TARGETS
   two_node_pipline
   cyclic_pipline
   image_pipeline_all_in_one
+  manual_composition
+  lifecycle_talker
+  lifecycle_listener
+  lifecycle_service_client
+  lifecycle_service_client_thread
+  static_tf
+  dynamic_tf
+  follow_turtle_tf
   DESTINATION lib/${PROJECT_NAME})
 
 install(DIRECTORY launch DESTINATION share/${PROJECT_NAME})
