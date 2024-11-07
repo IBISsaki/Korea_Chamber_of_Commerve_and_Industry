@@ -12,15 +12,11 @@ aiot robot
 
 [클릭](https://docs.google.com/presentation/d/1LHXvZnWKbSJLpbeop8mL-gTkLUKbxCPuk6moOfNLY-s/edit#slide=id.p)
 
-## 터틀봇3 버거 코드 링크
-[클릭](https://github.com/ROBOTIS-GIT/turtlebot3/tree/humble-devel)
-
 ## gazebo 환경 변수
 
 ```bash
 export SVGA_VGPU10=0
 ```
-
 
 ---
 
@@ -478,3 +474,137 @@ export SVGA_VGPU10=0
   - ros2 launch turtlebot3_gazebo empty_world.launch.py 로 실행.
   - rviz2 실습
   - 사각형 그리기 노드 디버깅( gazebo 시뮬레이션 이용)
+
+---
+
+## 2024_11_01
+
+---
+
+- 1교시
+  - 복습
+  - gazebo tf 와 turtlebot3_gazebo launch 파일 분석
+  - component manager 설명
+- 2교시
+  - Custom Executable 실습[제한 사항: 헤더 파일이 없으면 불가능]
+  - 보통 컴포넌트는 헤더 파일이 없음
+  - Launch 에서 컴포넌트 매니저 사용 실습 (composition_demo.launch.py)
+- 3교시
+  - 플러그인 rqt 실습
+  - rqt_example 작성 (rqt_example_widget 과 rqt_example ui 는 복사 해서 사용)
+- 4교시
+  - 빌드 및 rqt 플러그인 설치 실행
+  - 인식 오류가 있어서 ~/.config/ros.org/rqt_gui.ini 파일을 수정
+  - 파이썬 파일 강제 실행 python3 /scripts/rqt_example --force-discover
+- 5교시
+  - rqt 플러그인 설정 및 실습
+- 6교시
+  - 시뮬레이션으로 터틀봇3 사각형 그리기 실습
+  - 터틀봇3 사각형 그리기 완성
+
+---
+
+## 2024_11_04
+
+---
+
+- 1교시
+  - 복습
+  - lifecycle 설명
+  - lifecycle talker 노드 작성
+- 2교시
+  - lifecycle talker 노드 작성
+  - ros2 lifecycle list, get, set, transition 명령어 사용
+- 3교시
+  - error 상황에서 노드 재시작 설정 (launch)
+  - lifecycle listener 노드 작성
+- 4교시
+  - tf2 설명
+  - turtle_tf_py 노드 설치 및 실행
+  - static_tf2_broadcaster 노드 작성
+  - cli 명령어로 ros2 run tf2_ros static_tf2_broadcaster 실행
+- 5교시
+  - tf2 launch 파일 작성 ( 외부 런치 파일 실행(rviz2, turtle_tf_py, etc node))
+- 6교시
+  - dynamic tf2 broadcaster 노드 작성
+  - turtle1을 움직여서 rviz로 확인
+- 7교시
+  - tf2 listener 노드 작성
+
+---
+
+## 2024_11_05
+
+---
+
+- 1교시
+  - 복습
+  - sros2 설명, ros2 security create_key key_box
+- 2교시
+  - sros2 key 생성 및 사용
+  - sros2 변수 적용시 ros2 가 실행 안되는 현상이 있어서 서치후 다시 시도하기로 함.
+- 3교시
+  - turtlebot3 의 tf 발행 robotis 깃허브 분석
+  - tf 발행 위치 확인 urdf, turtlebot3_node
+- 4교시
+  - gazebo 설정
+- 5교시
+  - laserscan 데이터 분석 및 내부 데이터 업데이트 형식 설정 (라이다 센서)
+- 6교시
+  - move_turtle 의 follow_wall 노드 작성 (라이다 센서 활용)
+- 7교시
+  - follow_wall 노드 실습
+
+---
+
+## 2024_11_06
+
+---
+
+- 1교시
+  - 복습
+  - urdf 파일 작성 myfirtst.urdf
+- 2교시
+  - urdf_launch 패키지 설치 (sudo apt install ros-humble-urdf-launch)
+  - move_turtle 에 display.launch.py 작성
+  - rviz config 파일 작성 ( urdf.rviz )
+- 3교시
+  - multipleshapes.urdf 작성 (link 여러개 추가)
+  - origins.urdf 작성 origin 설정( 왼발 오른발 추가)
+- 4교시
+  - materials.urdf 작성 (색상 추가)
+  - visual.urdf 작성 (얼굴, 그리퍼 추가)
+- 5교시
+  - flexible.urdf 작성 (type continuous, revolute, prismatic 추가)
+  - mesh 파일 추가
+  - [gazebo plugin link](https://classic.gazebosim.org/tutorials?tut=ros_gzplugins#AddingaModelPlugin)
+- 6교시
+  - inertial 설명 ( collision, mass, inertia, origin 추가)
+  - physics.urdf 작성
+  - gazebo plugin 설명
+  - gazebo plugin 작성 예시(turtlebot3_simulation 분석)
+- 7교시
+  - xacro 설명, 기본 문법
+  - xacro 예제 (xacroed.urdf.xacro 작성)
+
+---
+
+## 2024_11_07
+
+---
+
+- 1교시
+  - 복습
+  - turtlesim_turtle_tf 실습(simple_ros_cpp)
+  - dynamic_tf2 작성
+- 2교시
+  - turtlesim, dynamic_tf, dynamic_tf2, follow_turtle_tf 노드 실행
+- 3교시
+  - move_turtle 에 follow_wall 노드 수정
+  - follow_point tf 발행 후, follow_point 추적 하여 움직이는 노드 작성
+  - gazebo 로 작동 확인
+- 4교시
+  - 터틀봇3 기체 적용
+- 5교시
+- 6교시
+- 7교시
