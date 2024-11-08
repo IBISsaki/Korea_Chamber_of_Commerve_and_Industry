@@ -23,6 +23,7 @@ find_package(rclcpp_lifecycle REQUIRED)
 find_package(lifecycle_msgs REQUIRED)
 find_package(tf2 REQUIRED)
 find_package(tf2_ros REQUIRED)
+find_package(nav_msgs REQUIRED)
 
 # library
 add_library(talker_component SHARED src/talker_component.cpp)
@@ -95,6 +96,7 @@ ament_target_dependencies(cyclic_pipline rclcpp std_msgs)
 
 add_executable(image_pipeline_all_in_one
   src/image_pipeline_all_in_one.cpp)
+  
 target_link_libraries(image_pipeline_all_in_one
   rclcpp::rclcpp
   ${builtin_interfaces_TARGETS}
@@ -137,6 +139,15 @@ ament_target_dependencies(dynamic_tf
   turtlesim
 )
 
+add_executable(dynamic_tf_2 src/dynamic_tf_2.cpp)
+ament_target_dependencies(dynamic_tf_2 
+  rclcpp
+  tf2_ros
+  tf2
+  geometry_msgs
+  turtlesim
+)
+
 add_executable(follow_turtle_tf src/follow_turtle_tf.cpp)
 ament_target_dependencies(follow_turtle_tf 
   rclcpp
@@ -145,6 +156,15 @@ ament_target_dependencies(follow_turtle_tf
   geometry_msgs
   turtlesim
 )
+
+add_executable(publish_map src/publish_map.cpp)
+ament_target_dependencies(publish_map 
+  rclcpp
+  nav_msgs
+)
+
+add_executable(publish_map_with_lidar src/publish_map_with_lidar.cpp)
+ament_target_dependencies(publish_map_with_lidar rclcpp nav_msgs sensor_msgs)
 
 install(TARGETS
   hello_pub
@@ -170,7 +190,10 @@ install(TARGETS
   lifecycle_service_client_thread
   static_tf
   dynamic_tf
+  dynamic_tf_2
   follow_turtle_tf
+  publish_map
+  publish_map_with_lidar
   DESTINATION lib/${PROJECT_NAME})
 
 install(DIRECTORY launch DESTINATION share/${PROJECT_NAME})

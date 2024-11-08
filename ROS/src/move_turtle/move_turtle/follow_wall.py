@@ -1,11 +1,13 @@
 import math
 
 import rclpy
-from geometry_msgs.msg import Twist
+import tf2_ros
+from geometry_msgs.msg import TransformStamped, Twist
 from nav_msgs.msg import Odometry
 from rclpy.node import Node
 from rclpy.qos import qos_profile_sensor_data
 from sensor_msgs.msg import BatteryState, Imu, LaserScan
+from tf2_ros import Buffer, TransformBroadcaster, TransformListener
 
 MAX_VEL = 0.21
 MAX_ANGLE = 2.8 # radian/sec
@@ -51,6 +53,8 @@ class Move_turtle(Node):
         self.phase = 0
         self.laserscan_degree = [3.5 for i in range(360)]
         self.find_wall = False
+        self.tf_broadcaster = TransformBroadcaster(self)
+        self.tf_listener = None
 
     def twist_pub(self):
         self.restrain()
@@ -59,10 +63,11 @@ class Move_turtle(Node):
     def laser_callback(self, msg: LaserScan):
         self.laserscan = msg
         count = 0
+        self.get_logger().info(f"self.laserscan_degree:{self.laserscan_degree}")
         for s_radian in self.laserscan.ranges:
             radian_index = msg.angle_min+msg.angle_increment*count
             degree_index = int(radian_index/3.141592*180)
-            if s_radian == float('inf'):
+            if s_radian == float('inf') or s_radian == 0.0:
                 s_radian = msg.range_max
             # if degree_index >= 360:
             #     degree_index = 359
@@ -96,6 +101,7 @@ class Move_turtle(Node):
                 self.find_wall = True
         else:
             # 코너에서
+            print("no follow tf point")
             if self.laserscan_degree[45] > 1.00:
                 self.twist.linear.x = MAX_VEL/4
                 self.twist.angular.z = MAX_ANGLE / 8
